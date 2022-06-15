@@ -1,0 +1,42 @@
+[
+    {
+        "fname": "Asif",
+        "lname": "Eram",
+        "dob": "2022-06-08",
+        "mobile": "01824500704",
+        "email": "eramasif16@gmail.com",
+        "address": "1\/b\/mirpur 13",
+        "set_user": "eram",
+        "set_pass": "eram1234"
+    },
+    {
+        "fname": "tamim",
+        "lname": "alam",
+        "dob": "2022-06-20",
+        "mobile": "0182345678",
+        "email": "tamimul@gmail.com",
+        "address": "1\/kajipara\/dhaka \/bangladesh",
+        "set_user": "tamim",
+        "set_pass": "tamim1234"
+    },
+    {
+        "fname": "asd",
+        "lname": "asda",
+        "dob": "2022-05-30",
+        "mobile": "43234234234",
+        "email": "e@gmail.com",
+        "address": "dasda",
+        "set_user": "asdasd",
+        "set_pass": "12345678"
+    },
+    {
+        "fname": "angela",
+        "lname": "sarkar",
+        "dob": "2022-06-06",
+        "mobile": "234234234",
+        "email": "angela@gmail.com",
+        "address": "sdads",
+        "set_user": "angela",
+        "set_pass": "angela123"
+    }
+]
