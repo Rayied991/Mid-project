@@ -47,7 +47,7 @@ if(!(isset($_SESSION)))
       <legend><h2>Officials login</h2></legend>
       <marquee behavior="" direction="left"><h2><mark>This field is only for the officials </mark></h2></marquee>
       <h3>Login as -</h3>
-      <button>Admin</button><br><br>
+      <button><a href="../Admin_View/Admin_Login.php">Admin</a></button><br><br>
       <button><a href="../manager_view/loginview.php">Manager</a></button><br><br>
       <button><a href="../Seller_View/Seller_Login.php">Seller</a></button>
     </fieldset>

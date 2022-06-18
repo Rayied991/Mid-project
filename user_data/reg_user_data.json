@@ -7,7 +7,7 @@
         "email": "eramasif16@gmail.com",
         "address": "1\/b\/mirpur 13",
         "set_user": "eram",
-        "set_pass": "eram1234"
+        "set_pass": "asif1234"
     },
     {
         "fname": "tamim",
@@ -38,25 +38,5 @@
         "address": "32123123",
         "set_user": "sajid",
         "set_pass": "something"
-    },
-    {
-        "fname": "newuser",
-        "lname": "new",
-        "dob": "2022-06-27",
-        "mobile": "231231",
-        "email": "new@gmail.com",
-        "address": "asdasd",
-        "set_user": "new",
-        "set_pass": "newpass123"
-    },
-    {
-        "fname": "new",
-        "lname": "user",
-        "dob": "2022-06-01",
-        "mobile": "343424",
-        "email": "new@gmail.com",
-        "address": "fsfsfsf",
-        "set_user": "new",
-        "set_pass": "new12345"
     }
 ]
