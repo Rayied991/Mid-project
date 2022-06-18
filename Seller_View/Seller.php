@@ -1,5 +1,6 @@
 <?php
 include("../Seller_Control/process.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,11 +18,14 @@ include("../Seller_Control/process.php");
             <h4 align="center">Grab The Tickets For Entertainment</h4>
         </fieldset>
         <fieldset>
-    <p><a href="#">Top Movies</a>
-     | <a href="#">Book ticket</a>
-    | <a href="https://www.facebook.com/romonasarkar30">Contact with seller</a>
-    | <a href="../user_view/about us.php">About us</a>
-    | <a href="../user_view/user_login.php">Logout</a>
+    <p><h3>Movies Section</h3>
+     <!-- | <a href="#">Book ticket</a> -->
+    | <a href="https://github.com/RomonaSarkar16">Contact seller</a>
+    
+    | <a href="../Seller_View/Ticket.php">Ticket</a>
+    | <a href="../Seller_View/Update.php">Update and Process</a>
+    | <a href="../Seller_View/Aboutus.php">About us</a>
+    | <a href="../Seller_Control/Seller_Logout.php">Logout</a>
     
  </p>
  </fieldset>
@@ -106,13 +110,13 @@ echo  $invalid_hall;
 
  <h3>Please Inform us your comments or issues:</h3>
 
- <textarea name="comment">
-     <?php echo  $comment;
+ <!-- <textarea name="comment">
+     <//?php echo  $comment;
      ?>
-    </textarea>
+    </textarea> -->
  <h2>
      <br>
- Contact Us:
+ Contact Us: <br>
  Phone: *023455678 <br>
  email: 
  <a href="https://www.google.com/gmail/about/">Starcineplex@gmail.com</a>

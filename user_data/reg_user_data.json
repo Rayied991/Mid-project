@@ -17,17 +17,7 @@
         "email": "tamimul@gmail.com",
         "address": "1\/kajipara\/dhaka \/bangladesh",
         "set_user": "tamim",
-        "set_pass": "tamim1234"
-    },
-    {
-        "fname": "asd",
-        "lname": "asda",
-        "dob": "2022-05-30",
-        "mobile": "43234234234",
-        "email": "e@gmail.com",
-        "address": "dasda",
-        "set_user": "asdasd",
-        "set_pass": "12345678"
+        "set_pass": "tamimul1234"
     },
     {
         "fname": "angela",
@@ -38,5 +28,35 @@
         "address": "sdads",
         "set_user": "angela",
         "set_pass": "angela123"
+    },
+    {
+        "fname": "sajid",
+        "lname": "alam",
+        "dob": "2022-06-19",
+        "mobile": "123134",
+        "email": "sajid@gmail.com",
+        "address": "32123123",
+        "set_user": "sajid",
+        "set_pass": "something"
+    },
+    {
+        "fname": "newuser",
+        "lname": "new",
+        "dob": "2022-06-27",
+        "mobile": "231231",
+        "email": "new@gmail.com",
+        "address": "asdasd",
+        "set_user": "new",
+        "set_pass": "newpass123"
+    },
+    {
+        "fname": "new",
+        "lname": "user",
+        "dob": "2022-06-01",
+        "mobile": "343424",
+        "email": "new@gmail.com",
+        "address": "fsfsfsf",
+        "set_user": "new",
+        "set_pass": "new12345"
     }
 ]

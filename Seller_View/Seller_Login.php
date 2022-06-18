@@ -1,5 +1,7 @@
 <?php
 include("../Seller_Control/Seller_Login_Valid.php");
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,12 +34,16 @@ include("../Seller_Control/Seller_Login_Valid.php");
                 echo $invalid_sellerpass;
                 ?>
                  <br><br>
-                 
-               <input type="submit" name="submit" value="Login"> <br><br>
+                 <a href="Seller.php">
+               <input type="button" name="submit" value="submit"> 
+                  </a>
+                  <br><br>
               
-               <a href="Seller_forgot_pass.php">Forgot Password?</a>
+               <!-- <a href="Seller_forgot_pass.php">Forgot Password?</a> -->
 
 
+               <a href="Seller_Reg.php">Wanna Register?
+</a>
               
                </fieldset>
  <fieldset>

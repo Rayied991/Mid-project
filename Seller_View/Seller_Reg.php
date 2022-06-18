@@ -11,7 +11,7 @@ include("../Seller_Control/Seller_Reg_Validation.php");
     <title>Seller Registration</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="" method="POST" >
     <h1 align="center">Seller Registration</h1>
     <fieldset>
 <legend>Enter the Personal Information</legend>
@@ -75,6 +75,7 @@ echo  $invalid_Sellerpass;
         <br><br>
         Confirm Password : 
         <input type="password" name="Confirm_seller_pass" placeholder="Confirm Seller Pass"> 
+        <input type="reset" value="Reset"> 
         <input type="submit" name="submit" value="Register">
         <?php
 echo   $invalid_ConSellerpass;

@@ -1,42 +1,75 @@
 <?php
+include("Seller_Reg_Validation.php");
 
 $invalid_sellername="";
 $invalid_sellerpass="";
 
  $valid_sellername="";
  $valid_sellerpass="";
+ session_start();
 
- if($_SERVER["REQUEST_METHOD"] =="POST")
- {
+$_SESSION['seller_name'] = 'Dear Seller';
+ 
+
+ 
+ 
+ 
+    if(isset($_REQUEST['submit']))
+    {
      
-     $seller_name = $_REQUEST["seller_name"];
-     $seller_pass= $_REQUEST["seller_pass"];
+     $sellername = $_REQUEST["seller_name"];
+     $sellerpassword= $_REQUEST["seller_pass"];
 
-    if(empty($seller_name))
+    if(empty($sellername))
     {
         $invalid_sellername="Please Enter your Name";
     }
     else{
-        $valid_sellername = $seller_name;
-       echo "Name : " . $seller_name;
-       echo"<br>";
+        $valid_sellername = $sellername;
+    //    echo "Name : " . $seller_name;
+    //    echo"<br>";
 
     }
     
-    if(empty($seller_pass))
+    if(empty($sellerpassword))
     {
-        $invalid_sellerpass="PLease Enter your Password";
+        $invalid_sellerpass="Please Enter your Password";
     }
-    else if (strlen($seller_pass) < 8)
+    else if (!empty($sellerpassword) && strlen($sellerpassword) >= 6)
     {
-     $invalid_sellerpass = "Please enter password more than 8 characters";
+        header("location:../Seller_View/Seller.php");
+     $valid_sellerpass=$sellerpassword;
     }
     else
     {
-        $valid_sellerpass = $seller_pass;
-        echo"Password Entered";
+        $invalid_sellerpass="Password Invalid";
     }
- }
 
+
+
+     //login using json
+     $login_data=file_get_contents("../DataSeller/DataSeller.json");
+     $fetch_login_data=json_decode($login_data);
+   
+     foreach($fetch_login_data as $log_data)
+    {
+         if($log_data=="Seller_name" && $value==$valid_sellername)
+         {
+             if($log_data=="Seller_pass" && $value==$valid_sellerpass)
+             {
+                 echo"Login success";
+                 //header("location:../Seller_View/Seller.php");
+             }
+             else
+             {
+                 echo"LOgin failed";
+             }
+         }
+         
+         
+         
+     }
+    }
+ 
 
 ?>

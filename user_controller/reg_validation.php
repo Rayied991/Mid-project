@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 $invalid_fname="";
 $invalid_lname="";
 $invalid_gender="";
@@ -109,7 +107,7 @@ if(isset($_POST['submit']))
     {
         $invalid_email="*you must enter your email";
     }
-    elseif (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    elseif (!empty($email) && !preg_match("/^[a-zA-Z0-9_]*@[a-zA-Z0-9]*\.[a-zA-Z]*$/",$email)) {
          $invalid_email="*you must enter valid email";
     }
     else
@@ -207,7 +205,6 @@ if(isset($_POST['submit']))
     }
      echo "<br> Registration Failed !!!! Please give all the informations<br>";
     
-
  }
 }
 

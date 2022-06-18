@@ -1,4 +1,10 @@
 <?php
+
+if(!isset($_SESSION))
+{
+    session_start();
+}
+
 $invalid_username="";
 $invalid_password="";
 $valid_username="";
@@ -43,6 +49,8 @@ $valid_password="";
         {
             if($login_data->set_user==$valid_username && $login_data->set_pass==$valid_password)
             {
+                $_SESSION["user_name"]=$valid_username;
+                $_SESSION["password"]=$valid_password;
                 header("location:../user_view/homepage.php");
             }
             else
@@ -60,6 +68,7 @@ $valid_password="";
   
 
     }
+
       
 
 ?>

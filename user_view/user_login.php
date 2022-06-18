@@ -1,5 +1,10 @@
 <?php include ("../user_controller/login_validation.php");
-include ("../user_controller/login_validation.php") ?>
+       
+if(!(isset($_SESSION)))
+{
+    session_start();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +14,7 @@ include ("../user_controller/login_validation.php") ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User panel</title>
 </head>
-<body bgcolor="#F9F6F0">
+<body>
     <form action="" method="post">
         <fieldset>
             <fieldset> 
@@ -21,7 +26,8 @@ include ("../user_controller/login_validation.php") ?>
             <legend><b><h2>User login panel</h2></b></legend>
             <br>
             <label for="user_name">User Name : </label>
-            <input type="text" name="user_name" placeholder="Name">
+            <input type="text" name="user_name" placeholder="Name" >
+            
             <?php echo $invalid_username; ?>
             <br><br>
             <label for="pass">Password : </label>
@@ -42,8 +48,8 @@ include ("../user_controller/login_validation.php") ?>
       <marquee behavior="" direction="left"><h2><mark>This field is only for the officials </mark></h2></marquee>
       <h3>Login as -</h3>
       <button>Admin</button><br><br>
-      <button>Manager</button><br><br>
-      <button>Seller</button>
+      <button><a href="../manager_view/loginview.php">Manager</a></button><br><br>
+      <button><a href="../Seller_View/Seller_Login.php">Seller</a></button>
     </fieldset>
 </body>
 </html>

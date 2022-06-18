@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
 </head>
-<body bgcolor="#F9F6F0">
+<body>
     <form action="" method="post">
     <fieldset>
         <fieldset> 
