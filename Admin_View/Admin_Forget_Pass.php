@@ -1,3 +1,6 @@
+<?php
+include("../Admin_Control/Res_Pass.php");
+?>
 <html>
     <title>Forget Password</title>
     <body>
@@ -16,13 +19,15 @@
                     <td>
 
                     <input type="text" name="Ad_name">
+                    <?php echo $invalid_adminname ?>
                     </td></tr>
                     <tr>
                         <td>
                             New Pasword:
                         </td>
                         <td>
-                            <input type="text" name="ad_new_pass">
+                            <input type="password" name="ad_new_pass">
+                            <?php echo $invalid_newpass ?>
                         </td>
                     </tr>
                
@@ -31,7 +36,8 @@
                             Confirm Password:
                         </td>
                         <td>
-                            <input type="text" name="con_pass">
+                            <input type="password" name="con_pass">
+                            <?php echo $invalid_confirm ?>
                         </td>
                     </tr>
                     <td><input type="submit" name="save_pass" value="Save new password">

@@ -1,3 +1,2 @@
-# Mid-Project
--Project using HTML and PHP
-
+# Mid-project
+Project using HTML and PHP

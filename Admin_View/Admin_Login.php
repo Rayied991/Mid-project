@@ -1,6 +1,13 @@
 <?php
 
 include("../Admin_control/Admin_login_Validation.php");
+
+if(isset($_SESSION["admin_name"]))
+{
+    header("location:../Admin_View/Admin_Homepage.php");
+}
+
+
 ?>
 
 <html>
@@ -15,14 +22,17 @@ include("../Admin_control/Admin_login_Validation.php");
             <table>
                 <tr>
                     <td>Admin name</td>
-                    <td><input type="text" name="admin_name" placeholder="Enter your Username"></td>
+                    <td><input type="text" name="admin_name" placeholder="Enter your Adminname">
                     <?php echo $invalid_adminname; ?>
+</td>
 </tr>
 <tr>
                     <td>Password</td>
-                    <td><input type="password" name="admin_pass" placeholder="Enter your Password"></td>
+                    <td><input type="password" name="admin_pass" placeholder="Enter your Password">
                     <?php echo $invalid_password; ?>
+                    </td>
 </tr>
+
 <tr>
                     <td> <input type="submit" name="Submission" value="Login"></td>
                 </tr>
