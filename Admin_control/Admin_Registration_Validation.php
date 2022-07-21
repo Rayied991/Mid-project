@@ -1,4 +1,5 @@
 <?php
+include("../Admin_Model/db.php");
 $validfname="";
 $validlname="";
 $validemail="";	
@@ -38,6 +39,9 @@ $email=$_REQUEST["Email"];
 $mob_no=$_REQUEST["Admin_num"];
 $cf=$_REQUEST["c_pass"];
 $admin_name=$_REQUEST["Admin_name"];
+
+$mydb=new db();
+$myconn=$mydb->opencon();
 if(empty($fname) || is_numeric($fname)|| strlen($fname)<5){	
     $invalidfname=" Please Enter your First name";
 
@@ -140,7 +144,7 @@ if(isset($_REQUEST["g1"])){
     echo "<br>";
 }
 else{  
-    $invalidgen= "Please select a Gender<br>";
+    echo "Please select a Gender<br>";
 }
 echo "<br>";
 
@@ -173,29 +177,34 @@ if(empty($fname) || is_numeric($fname)|| strlen($fname)<5 || empty($lname)|| is_
 if($x==9){
 
 //Get form data 
-$Admindata=array(
-    'FirstName'=>$_POST['fname'],
-    'LastName'=>$_POST['lname'],	
-    'Age'=>$_POST['age'],
-    'Mobile'=>$_POST["Admin_num"],
-    'E-mail'=>$_POST["Email"],
-    'Admin_Name'=>$validadmin,
-    'Password'=>$_POST["pass"],
+// $Admindata=array(
+//     'FirstName'=>$_POST['fname'],
+//     'LastName'=>$_POST['lname'],	
+//     'Age'=>$_POST['age'],
+//     'Mobile'=>$_POST["Admin_num"],
+//     'E-mail'=>$_POST["Email"],
+//     'Admin_Name'=>$validadmin,
+//     'Password'=>$_POST["pass"],
 
-);
-$existing_data=file_get_contents("../Admin_Data/admin_data.json");
-$tempdata=json_decode($existing_data);
-$tempdata[]=$Admindata;
+// );
+// $existing_data=file_get_contents("../Admin_Data/admin_data.json");
+// $tempdata=json_decode($existing_data);
+// $tempdata[]=$Admindata;
 
-$jsondata=json_encode($tempdata,JSON_PRETTY_PRINT);
+// $jsondata=json_encode($tempdata,JSON_PRETTY_PRINT);
 
-if(file_put_contents("../Admin_Data/admin_data.json", $jsondata)) {
-    echo " Successfully Registered <br>";
+// if(file_put_contents("../Admin_Data/admin_data.json", $jsondata)) {
+//     echo " Successfully Registered <br>";
    
-}
-else {
-    echo "Not Registered Successfully!<br>";
-}
+// }
+// else {
+//     echo "Not Registered Successfully!<br>";
+// }
+
+//registration using sql
+    $mydb=new db();
+    $myconn=$mydb->opencon();
+    $mydb->insertadmin($validfname,$validlname,$validage,$_REQUEST["g1"],$validmob,$validemail,$validadmin,$validpass,$validcf,"admin_registration",$myconn);
 
 }
 }

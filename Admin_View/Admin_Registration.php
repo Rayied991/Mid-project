@@ -32,9 +32,9 @@ include("../Admin_control/Admin_Registration_Validation.php");
     <tr>
         <td>Gender: </td>
         <td>
-            <input type="radio" name="g1" >Male
-            <input type="radio" name="g1" >Female
-            <input type="radio" name="g1" >Others
+            <input type="radio" name="g1" value="Male" >Male
+            <input type="radio" name="g1" value="Female" >Female
+            <input type="radio" name="g1" value="Others">Others
         </td>
     </tr>
     <tr>

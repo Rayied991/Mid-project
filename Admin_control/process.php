@@ -87,9 +87,6 @@ else
 $invalid_hall= "<br>select radio a Button.";
 }
 
-echo"Seat No : ";
-echo(rand(1,30));
-echo"<br>";
 
 
 
@@ -97,7 +94,8 @@ echo"<br>";
 
 
 
-echo"<br>";
+
+
 
 
 
