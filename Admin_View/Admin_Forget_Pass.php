@@ -21,13 +21,14 @@ include("../Admin_Control/Res_Pass.php");
                     <input type="text" name="Ad_name">
                     <?php echo $invalid_adminname ?>
                     </td></tr>
+                    
                     <tr>
                         <td>
                             New Pasword:
                         </td>
                         <td>
                             <input type="password" name="ad_new_pass">
-                            <?php echo $invalid_newpass ?>
+                            <?php echo $invalidpass ?>
                         </td>
                     </tr>
                
@@ -37,10 +38,11 @@ include("../Admin_Control/Res_Pass.php");
                         </td>
                         <td>
                             <input type="password" name="con_pass">
-                            <?php echo $invalid_confirm ?>
+                            <?php echo  $invalidcf ?>
                         </td>
                     </tr>
-                    <td><input type="submit" name="save_pass" value="Save new password">
+                    <td>
+                        <input type="submit" name="save_pass" value="Save new password">
 </td>
                 </table>
                 

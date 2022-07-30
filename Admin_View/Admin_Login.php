@@ -23,13 +23,13 @@ if(isset($_SESSION["admin_name"]))
                 <tr>
                     <td>Admin name</td>
                     <td><input type="text" name="admin_name" placeholder="Enter your Adminname">
-                    <?php echo $invalid_adminname; ?>
+                    
 </td>
 </tr>
 <tr>
                     <td>Password</td>
                     <td><input type="password" name="admin_pass" placeholder="Enter your Password">
-                    <?php echo $invalid_password; ?>
+                   
                     </td>
 </tr>
 

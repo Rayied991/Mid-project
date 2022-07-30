@@ -1,11 +1,17 @@
 <?php
-
+include("../Admin_Model/db.php");
 session_start();
-
-$invalid_adminname="";
-$invalid_password="";
-$valid_adminname="";
+// setcookie("Admin","visited",time()+86400);
+// if(isset($_COOKIE["Admin"])){
+    // echo "you have visited us<br>";
+// }
+// else{
+    // echo "Welcome to our site<br>";
+// }
+$validadmin="";
+$invalidadmin="";
 $validpass="";
+$invalidpass="";
 
  
    
@@ -15,31 +21,47 @@ if(isset($_REQUEST["Submission"])){
     $password=$_REQUEST["admin_pass"];
    
 
-   
+   if(empty($_REQUEST["admin_name"])|| empty($_REQUEST["admin_pass"])){
+    echo "Admin name and Password cannot be empty";
 
-    if(empty($admin_name)){
-        $invalid_adminname="Please Enter your Admin name";
+   }
+   else{
+    $mydb=new db();
+    $conobj=$mydb->opencon();
+    $results=$mydb->checklogin($conobj,"admin_registration",$admin_name,$password);
+    if($results->num_rows>0){
+        $_SESSION["admin_name"]=$_REQUEST["admin_name"];
+        $_SESSION["admin_pass"]=$_REQUEST["admin_pass"];
+
     }
     else{
-        $valid_adminname=$admin_name;
+        echo "Admin not found<br>";
     }
+   }
 
-    if(empty($password)){
-        $invalid_password="Please Enter your Password";
-    }
-    else if(!empty($password) && strlen($password)<8){
+    // if(empty($admin_name)){
+    //     $invalid_adminname="Please Enter your Admin name";
+    // }
+    // else{
+    //     $valid_adminname=$admin_name;
+    // }
+
+    // if(empty($password)){
+    //     $invalid_password="Please Enter your Password";
+    // }
+    // else if(!empty($password) && strlen($password)<8){
         
-        $invalid_password="Password must Contains at least 8 characters";
-            echo "<br>";
+    //     $invalid_password="Password must Contains at least 8 characters";
+    //         echo "<br>";
         
             
-        }
-    else{
-        $validpass=$password;
+    //     }
+    // else{
+    //     $validpass=$password;
           
             
           
-    }
+    // }
 
 
 

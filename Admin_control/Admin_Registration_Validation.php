@@ -204,7 +204,7 @@ if($x==9){
 //registration using sql
     $mydb=new db();
     $myconn=$mydb->opencon();
-    $mydb->insertadmin($validfname,$validlname,$validage,$_REQUEST["g1"],$validmob,$validemail,$validadmin,$validpass,$validcf,"admin_registration",$myconn);
+    $mydb->insertadmin($validfname,$validlname,$validage,$_REQUEST["g1"],$validmob,$validateemail,$validadmin,$validpass,$validcf,"admin_registration",$myconn);
 
 }
 }

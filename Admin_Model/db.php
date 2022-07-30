@@ -24,7 +24,28 @@ return $conn;
             echo "can't insert".$conn->error;//error debug using this property
         }
             }
+        
+        function checklogin($conn,$tablename,$admin_name,$password){
+            $sqlstr="SELECT admin_name,Password FROM $tablename WHERE admin_name='$admin_name' AND Password='$password'";
+            return $conn->query($sqlstr);
+    
         }
+        function Updateprofile($conn,$tablename,$admin_name,$password,$confirm_password){
+        
+            $sqlstr="UPDATE $tablename SET admin_name='$admin_name',password='$password',confirm_password='$confirm_password'  WHERE admin_name='$admin_name'";
+            return $conn->query($sqlstr);
+            
+    
+        }
+        function Deleteprofile(){
+
+        }
+       
+        function connclose($conn){
+            return $conn->close();
+        }
+    }    
+        
 
 
 
