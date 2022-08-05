@@ -1,21 +1,7 @@
 <?php
 include("../Admin_control/Admin_login_Validation.php");
-$cookie_name="Admin";
-$cookie_value="Visited";
-setcookie($cookie_name, $cookie_value,time() + 86400, "/");
-
-if(isset($_SESSION["admin_name"])){
-    echo "Welcome " .$_SESSION["admin_name"];
-    echo "<br>";
-}
-
-if(isset($_COOKIE[$cookie_name])) {
-    echo "Welcome again ".$cookie_name;
-  }
-  else {  
-    echo "Welcome ".$cookie_name;	  
-}  
-
+include("../Admin_control/cookie.php");  
+include("../Admin_control/sessioncheck.php");
 $invalid_customer_name="";
 $valid_customer_name="";
 
@@ -30,9 +16,6 @@ $valid_clock="";
 if(isset($_REQUEST["submit"])){
    
 {
-
-
-
 
 if(empty($_POST["customer_name"])  || is_numeric($_POST["customer_name"]))
 {

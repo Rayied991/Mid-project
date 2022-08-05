@@ -2,9 +2,6 @@
 
 include("../Admin_control/process.php");
 
-
-
-
 ?>
 
 <html >
@@ -41,7 +38,7 @@ include("../Admin_control/process.php");
    <br>
     <br><br><br>
    
-<center>
+<!-- <center>
 
  
         <img src="../images/intrusion.jpg" srcset="" width="20%"><br> 
@@ -120,7 +117,7 @@ echo  $invalid_hall;
  </h2>
 <br><br>
 <center>
-<input type="submit" name="submit" value="DONE">
+<input type="submit" name="submit" value="DONE"> -->
 </center>
 </form>
 </body>
