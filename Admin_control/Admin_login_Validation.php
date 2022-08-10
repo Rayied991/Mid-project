@@ -1,13 +1,7 @@
 <?php
 include("../Admin_Model/db.php");
 session_start();
-// setcookie("Admin","visited",time()+86400);
-// if(isset($_COOKIE["Admin"])){
-    // echo "you have visited us<br>";
-// }
-// else{
-    // echo "Welcome to our site<br>";
-// }
+
 $validadmin="";
 $invalidadmin="";
 $validpass="";
@@ -19,6 +13,15 @@ $invalidpass="";
 if(isset($_REQUEST["Submission"])){
     $admin_name=$_REQUEST["admin_name"];
     $password=$_REQUEST["admin_pass"];
+
+   
+
+    
+
+
+  
+
+
    
 
    if(empty($_REQUEST["admin_name"])|| empty($_REQUEST["admin_pass"])){
@@ -26,6 +29,17 @@ if(isset($_REQUEST["Submission"])){
 
    }
    else{
+    //remember me
+ if(isset($_REQUEST["Remember_me"])){
+    setcookie("admin_name",$_REQUEST["admin_name"],time()+86400);
+    setcookie("admin_pass",$_REQUEST["admin_pass"],time()+86400);
+   
+}
+else{
+    setcookie("admin_name","",time()-86400);
+    setcookie("admin_pass","",time()-86400);
+}
+    
     $mydb=new db();
     $conobj=$mydb->opencon();
     $results=$mydb->checklogin($conobj,"admin_registration",$admin_name,$password);
@@ -38,6 +52,7 @@ if(isset($_REQUEST["Submission"])){
         echo "Admin not found<br>";
     }
    }
+  
 
     // if(empty($admin_name)){
     //     $invalid_adminname="Please Enter your Admin name";

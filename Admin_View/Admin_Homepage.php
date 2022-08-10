@@ -20,8 +20,10 @@ include("../Admin_control/process.php");
     <p><a href="#">Top Movies</a>
     | <a href="https://github.com/RomonaSarkar16">Contact with seller</a>
     | <a href="https://github.com/rubabaa499">Contact with Manager</a>
-    | <a href="">Admin Panel</a>
-    | <a href="Cineplex_info.php">About us</a>
+    | <a href="">About Admins</a>
+    | <a href="Cineplex_info.php">About Admins</a>
+    <br>
+    <a href="../Admin_View/noticeboard.php">Post Notice</a>
     | <a href="../Admin_control/Admin_logout.php">Logout</a>
     
  </p>

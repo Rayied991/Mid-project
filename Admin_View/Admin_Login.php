@@ -22,15 +22,21 @@ if(isset($_SESSION["admin_name"]))
             <table>
                 <tr>
                     <td>Admin name</td>
-                    <td><input type="text" name="admin_name" placeholder="Enter your Adminname">
+                    <td><input type="text" name="admin_name" placeholder="Enter your Adminname" value="<?php if(isset($_COOKIE["admin_name"])) { echo $_COOKIE["admin_name"]; } ?>">
                     
 </td>
 </tr>
 <tr>
                     <td>Password</td>
-                    <td><input type="password" name="admin_pass" placeholder="Enter your Password">
+                    <td><input type="password" name="admin_pass" placeholder="Enter your Password" value="<?php if(isset($_COOKIE["admin_pass"])) { echo $_COOKIE["admin_pass"]; } ?>">
+                </td>
+                  
                    
-                    </td>
+                   
+                    
+</tr>
+<tr>
+<td> <input type="checkbox" name="Remember_me">Remember me</td>
 </tr>
 
 <tr>
