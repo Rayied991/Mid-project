@@ -20,14 +20,19 @@ $validadmin="";
 $invalidadmin="";
 $validcon="";
 $validgen="";
+$validpic="";
+$invalidpic="";
+
 
 $x=0;
 //email regex
 $email_regex = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/"; 
+$email_regex_aiub="/^\w+([-+.']\w+)*@[A-Za-z\d]+\.aiub.edu$/";
 //password regex
 $pass_regex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
-// mobile reg pattern
-$mob_regex ="^([01]|\+88)?\d{11}^";
+
+//age must be more than 1 digit pattern
+$age_regex =" /^\d{2}$/";
 
 if(isset($_POST["Submission"])){
 $fname=$_REQUEST["fname"];
@@ -35,6 +40,8 @@ $lname=$_REQUEST["lname"];
 $age=$_REQUEST["age"];
 $pass=$_REQUEST["pass"];
 $email=$_REQUEST["Email"];
+$myfile=$_FILES["myfile"]["name"];
+$temp_name=$_FILES["myfile"]["tmp_name"];
 
 $mob_no=$_REQUEST["Admin_num"];
 $cf=$_REQUEST["c_pass"];
@@ -70,13 +77,14 @@ else{
 }
 echo "<br>";
 
+
 if(empty($email)){
     $invalidemail="Please Enter a Valid Email";
     echo "<br>";
  
 }
 else{
-    if(preg_match($email_regex,$email)){
+    if(preg_match($email_regex,$email)|| preg_match($email_regex_aiub,$email)){
         echo "Valid Email<br>";
         $validateemail=$email;
         $x++;
@@ -98,7 +106,7 @@ if(empty($pass)){
 else{
    
     if(strlen($pass)>=5 && preg_match($pass_regex,$pass)){
-        echo "Passwored Entered<br>";
+        echo "Password Entered<br>";
         $validpass=$pass;
         $x++;
     }
@@ -130,11 +138,16 @@ if(empty($age)){
     $invalidage="Please Enter your Age!";
     echo "<br>";
 }
-else{
-    echo "Valid Age<br>";
+else if($age>=18 && preg_match($age_regex,$age)){
     $validage=$age;
     $x++;
+    echo "Valid Age<br>";
 }
+else{
+    $invalidage="Age must be more than 1 digits";
+    echo "<br>";
+}
+
 echo "<br>";
 
 if(isset($_REQUEST["g1"])){
@@ -148,18 +161,33 @@ else{
 }
 echo "<br>";
 
-if(strlen($mob_no)>=11 && preg_match($mob_regex,$mob_no)){
+if(strlen($mob_no)>=11 && !empty($mob_no)){
     echo "Valid Mobile Number";
     echo "<br>";
     $validmob=$mob_no;
     $x++;
     echo "Mobile Number : " . $validmob;
 }
+else if(!empty($mob_no=="+88")){
+    $invalidmob="Phone Number cannot start with +88";
+    echo "<br>";       
+}
 else{
-    $invalidmob="Please Enter a Valid Mobile Number!";
-
+    $invalidmob="Mobile Number is not valid";
+    echo "<br>";
 }
 echo "<br>";
+
+if(move_uploaded_file($temp_name,"../Admin_Uploads/".$myfile)){
+    $validpic=$myfile;
+    echo $validpic." is Uploaded";
+    echo "<br>";
+    $x++;
+}
+else{
+    $invalidpic= "File not Uploaded";
+    echo "<br>";
+}
 
 if(empty($admin_name)){
     $invalidadmin="You must enter your name!";
@@ -174,7 +202,7 @@ if(empty($fname) || is_numeric($fname)|| strlen($fname)<5 || empty($lname)|| is_
     echo "Please fill up all the fields";
 }
 
-if($x==9){
+if($x==10){
 
 //Get form data 
 // $Admindata=array(
@@ -204,7 +232,7 @@ if($x==9){
 //registration using sql
     $mydb=new db();
     $myconn=$mydb->opencon();
-    $mydb->insertadmin($validfname,$validlname,$validage,$_REQUEST["g1"],$validmob,$validateemail,$validadmin,$validpass,$validcf,"admin_registration",$myconn);
+    $mydb->insertadmin($validfname,$validlname,$validage,$_REQUEST["g1"],$validmob,$validateemail,$validpic,$validadmin,$validpass,$validcf,"admin_registration",$myconn);
 
 }
 }

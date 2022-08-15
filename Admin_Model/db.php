@@ -14,9 +14,9 @@ if($conn->connect_error){
 }
 return $conn;
     }
-    function insertadmin($fname,$lname,$age,$gender,$mob_no,$email,$admin_name,$password,$confirm_password,$table,$conn){
+    function insertadmin($fname,$lname,$age,$gender,$mob_no,$email,$file_upload,$admin_name,$password,$confirm_password,$table,$conn){
 
-        $sqlstr="INSERT into $table(fname,lname,age,gender,mob_no,email,admin_name,password,confirm_password) VALUES ('$fname','$lname','$age','$gender','$mob_no','$email','$admin_name','$password','$confirm_password')";
+        $sqlstr="INSERT into $table(fname,lname,age,gender,mob_no,email,file_upload,admin_name,password,confirm_password) VALUES ('$fname','$lname','$age','$gender','$mob_no','$email','$file_upload','$admin_name','$password','$confirm_password')";
         if($conn->query($sqlstr)){
             echo "data is being inserted";
         }

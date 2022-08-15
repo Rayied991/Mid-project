@@ -26,7 +26,7 @@ include("../Admin_control/Admin_Registration_Validation.php");
 
                 </tr></td>
                 <tr><td>Age: </td>  
-        <td><input type="text" name="age" placeholder="Enter your Age?">
+        <td><input type="number" name="age" placeholder="Enter your Age?">
         <?php echo $invalidage; ?>
     </tr></td>
     <tr>
@@ -37,6 +37,7 @@ include("../Admin_control/Admin_Registration_Validation.php");
             <input type="radio" name="g1" value="Others">Others
         </td>
     </tr>
+    
     <tr>
         <td>Mobile No:</td>
         <td>
@@ -52,6 +53,13 @@ include("../Admin_control/Admin_Registration_Validation.php");
         <?php echo $invalidemail; ?>
         
     </tr></td>
+
+    <tr>
+        <td> Upload a Profile Picture:</td>
+        <td>
+            <input type="file" name="myfile" >
+        </td>
+    </tr>
 </table>
 
         

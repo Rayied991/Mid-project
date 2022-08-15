@@ -48,14 +48,6 @@ if(isset($_SESSION["admin_name"]))
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        Contact Me: 01615972128
-                    </td>
-                    <td>
-                        <a href="https://github.com/Rayied991">
-                            <img src="../images/github.png" alt="Github"  width="50" height="50" >
-                        </a>
-                    </td>
                 </tr>
             </table>
             
